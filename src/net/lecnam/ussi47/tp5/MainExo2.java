@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class MainExo2 {
     /*static Auteur[] auteurs = new Auteur[100];
-    static Article[] livres = new Livre[100];
+    static Livre[] livres = new Livre[100];
     static int nbAuteur = 0;
     static int nbLivre = 0;
 
