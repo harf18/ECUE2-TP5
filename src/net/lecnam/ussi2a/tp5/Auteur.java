@@ -8,18 +8,45 @@ import java.time.Period;
  * Il "marche"... à peu près.
  */
 public class Auteur {
-    public static String nom;
-    public String prenom;
-    public LocalDate dateNaissance;
+    private String nom;
+    private String prenom;
+    private LocalDate dateNaissance;
+    // final car inchangeable dans les classes et normalement ça devrait rester pareil tout du long
 
     public Auteur(String nom, String prenom, LocalDate dateNaissance) {
-        this.nom = nom;
-        this.prenom = prenom;
-        this.dateNaissance = dateNaissance;
+        try {
+            if (nom == null || nom.isBlank()) {
+                throw new IllegalArgumentException("Le nom est obligatoire");
+            }
+
+            if (prenom == null || prenom.isBlank()) {
+                throw new IllegalArgumentException("Le prénom est obligatoire");
+            }
+            if (dateNaissance == null || Period.between(dateNaissance, LocalDate.now()).getYears() < 0) {
+                throw new IllegalArgumentException("La date de naissance doit être antérieure");
+            }
+            this.nom = nom;
+            this.prenom = prenom;
+            this.dateNaissance = dateNaissance;
+        } catch (IllegalArgumentException e){
+            System.out.println(e.getMessage());
+        }
     }
 
     public String toString() {
-        int age = Period.between(dateNaissance, LocalDate.now()).getYears();
-        return prenom + " " + nom + " (" + age + " ans)";
+        return prenom + " " + nom + " (" + this.getAge() + " ans)";
     }
+
+    public String getNom() {
+        return this.nom;
+    }
+
+    public String getPrenom() {
+        return this.prenom;
+    }
+
+    public int getAge() {
+        return Period.between(dateNaissance, LocalDate.now()).getYears();
+    }
+
 }
