@@ -25,9 +25,9 @@ Nom / Prénom :
 
 ## Partie 3
 
-**3.1** :
+**3.1** : Parce que cela permettrait de mettre directement un nombre invalide
 
-**3.2** :
+**3.2** : En passant par une méthode privé
 
 ## Partie 4
 

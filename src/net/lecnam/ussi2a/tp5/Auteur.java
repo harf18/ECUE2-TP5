@@ -30,6 +30,18 @@ public class Auteur {
         this.dateNaissance = dateNaissance;
     }
 
+    public String getNom() {
+        return nom;
+    }
+
+    public String getPrenom() {
+        return prenom;
+    }
+
+    public LocalDate getDateNaissance() {
+        return dateNaissance;
+    }
+
     public int getAge() {
         return Period.between(dateNaissance, LocalDate.now()).getYears();
     }
