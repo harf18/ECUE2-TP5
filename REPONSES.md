@@ -19,9 +19,9 @@ Nom / Prénom :
 
 ## Partie 2
 
-**2.1** :
+**2.1** : Non. Les attributs sont 'final' et ne doivent plus changer après la création de l'auteur
 
-**2.2** :
+**2.2** : Pour garantir que tout objet Auteur créé est valide
 
 ## Partie 3
 

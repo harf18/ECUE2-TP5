@@ -34,8 +34,8 @@ public class CodeDuStagiaire {
         System.out.println(germinal);
 
         System.out.println("\n=== Étape 3 : un auteur contemporain");
-        Auteur inconnu = new Auteur("Dupont", "Jean", LocalDate.of(2090, 1, 1));
-        System.out.println(inconnu);
+        // Auteur inconnu = new Auteur("Dupont", "Jean", LocalDate.of(2090, 1, 1));
+        // System.out.println(inconnu);
 
         System.out.println("\n=== Étape 4 : \"correction\" d'une faute de frappe");
         tourDuMonde.isbn = "123";
@@ -49,7 +49,7 @@ public class CodeDuStagiaire {
         bib.afficherLivres();
 
         System.out.println("\n=== Étape 6 : on remplit tout");
-        bib.nbLivres = 100;
+        // bib.nbLivres = 100;
         bib.ajouterLivre(new Livre(zola, "L'Assommoir", "9782070360024", 1));
         bib.afficherLivres();
 
