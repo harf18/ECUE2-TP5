@@ -4,12 +4,32 @@ package net.lecnam.ussi2a.tp5;
  * Code écrit par l'ancien stagiaire.
  */
 public class Bibliotheque {
-    public Livre[] livres = new Livre[100];
-    public int nbLivres = 0;
+    private Livre[] livres = new Livre[100];
+    private int nbLivres = 0;
 
-    public void ajouterLivre(Livre livre) {
+    public boolean ajouterLivre(Livre livre) {
+        if (livre == null || nbLivres >= livres.length) {
+            return false;
+        }
+
+        for (int i = 0; i < nbLivres; i++) {
+            if (livres[i].aLeMemeIsbnQue(livre)) {
+                return false;
+            }
+        }
+
         livres[nbLivres] = livre;
         nbLivres++;
+
+        return true;
+    }
+
+    public int getNbLivres() {
+        return nbLivres;
+    }
+
+    public boolean estPleine() {
+        return nbLivres >= livres.length;
     }
 
     public void afficherLivres() {
